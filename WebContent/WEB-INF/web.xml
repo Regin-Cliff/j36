@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	
+	<!-- Spring容器 -->
+	<context-param>	<!-- 容器所需要的参数 -->
+		<param-name>contextConfigLocation</param-name>	<!-- 参数名称 -->
+		<param-value>classpath:spring-*.xml</param-value>	<!-- 参数的值 -->
+	</context-param>
+	<listener> 		<!-- 监听器-tomcat一运行就创建这个容器 -->
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>	<!-- 就用这个监听器 -->
+	</listener>
+	<!-- Springmvc的前端控制器 ：拦截所有请求-->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:springmvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+</web-app>
