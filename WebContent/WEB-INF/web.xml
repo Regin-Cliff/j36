@@ -7,7 +7,7 @@
 	<!-- Spring容器 -->
 	<context-param>	<!-- 容器所需要的参数 -->
 		<param-name>contextConfigLocation</param-name>	<!-- 参数名称 -->
-		<param-value>classpath:spring-*.xml</param-value>	<!-- 参数的值 -->
+		<param-value>classpath:Spring-*.xml</param-value>	<!-- 参数的值 -->
 	</context-param>
 	<listener> 		<!-- 监听器-tomcat一运行就创建这个容器 -->
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>	<!-- 就用这个监听器 -->
@@ -18,7 +18,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:springmvc.xml</param-value>
+			<param-value>classpath:Springmvc.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
